@@ -1,0 +1,143 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site1.master.cs" Inherits="WebApplication6.Site1" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">     
+    <title></title>
+    <script type="text/javascript" src="<%= ResolveUrl("~/Scripts/jquery-1.11.1.min.js")%>"></script>
+    <script type="text/javascript" src="<%= ResolveUrl("~/Scripts/ccvalidate.js")%>"></script>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            height: 75px;
+        }
+
+        .auto-style2 {
+            width: 12.5%;
+            text-align: center;
+            font-size: 1.3em;
+            font-weight: 600;
+            padding: 0;
+            background-color: #efeeef;             
+        }
+
+        .auto-style3 {
+            height: 21px;
+            background-color: #efeeef; 
+        }
+
+        .auto-style4 {
+            width: 125%;
+            min-height: 300px;
+        }
+
+        .auto-style5 {
+            width: 25%;
+            min-height: 300px;
+        }
+
+        .main-style {
+            margin: auto;
+            width: inherit;
+            background: #7ac0da;
+            text-align: center;
+            min-width: 800px;
+            max-width: 1000px;
+            max-height: 650px;
+        }
+
+        .content-wrapper {
+            margin: 0 auto;
+            min-width: 960px;
+            max-width: 1080px;
+        }
+
+        #body {
+            background-color: #efeeef;
+            clear: both;
+            padding-bottom: 35px;
+        }
+        #ContentPlaceHolder {
+            min-height:300px;
+        }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        
+        <div class="content-wrapper">
+            <table class="main-style">
+                <tr style="background-color: #efeeef">
+                    <td colspan="2" class="auto-style1">
+                        <asp:Image ID="Image1" runat="server" Height="105px" style="margin-left: 0px; margin-right: 20px; margin-top: 20px; margin-left: 20px; float:left;" Width="155px" ImageUrl="~/Images/nurses.jpg" />
+                        <h1 style="font-size: 4em">
+                            OUR HOSPITAL
+                             </h1>
+                        <asp:LoginStatus ID="LoginStatus1" runat="server"  Font-Size="1em" ForeColor="Black" Height="1em" style="margin-right: 10px; float: right;" LogoutAction="Redirect" LogoutPageUrl="~/Pages/HomePage.aspx"/>
+                     </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="height: 40px;">
+                        <table border="0" style="height: 40px; width: 100%; background: grey">
+                            <tr style="background: silver">
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton3" runat="server" PostBackUrl="~/PublicPages/HomePage.aspx" CausesValidation="FALSE">Home</asp:LinkButton>
+                                </td>
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton1" runat="server" PostBackUrl="~/Pages/PatientGrid.aspx" CausesValidation="FALSE">Patients</asp:LinkButton>
+                                </td>
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton2" runat="server" PostBackUrl="~/Pages/PatientRegistration.aspx" CausesValidation="FALSE">Patient Registration</asp:LinkButton>
+                                </td>
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton4" runat="server" PostBackUrl="~/Pages/Visits.aspx" CausesValidation="FALSE">Visits</asp:LinkButton>
+                                </td>
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton5" runat="server" PostBackUrl="~/Pages/Doctors.aspx" CausesValidation="FALSE">Doctors</asp:LinkButton>
+                                </td>                                                            
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton6" runat="server" PostBackUrl="~/Pages/BedGrid.aspx" CausesValidation="FALSE">Beds</asp:LinkButton>
+                                </td>
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton7" runat="server" PostBackUrl="~/Pages/Discharge.aspx" CausesValidation="FALSE">Discharge</asp:LinkButton>
+                                </td>
+                                <td colspan="1" class="auto-style2">
+                                    <asp:LinkButton ID="LinkButton8" runat="server" PostBackUrl="~/Pages/DoctorVisits.aspx" CausesValidation="FALSE">Doctors     Visits</asp:LinkButton>
+                                </td>
+                            </tr>
+                        </table>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="auto-style5" >
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat= "server">
+                        </asp:ContentPlaceHolder>
+                    </td>
+                    <td class="auto-style4">
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                            
+                        </asp:ContentPlaceHolder>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="auto-style3">Hospital 2014 - Levi Serebryanski
+                        <div style="text-align:right; width:100%; background-color: gray">
+                        <asp:TreeView ID="TreeView1" runat="server" DataSourceID="SiteMapDataSource1" >
+                        </asp:TreeView>
+                        <asp:SiteMapDataSource ID="SiteMapDataSource1" runat="server" StartingNodeUrl="~/PublicPages/HomePage.aspx" />
+
+                        </div>
+                    </td>
+                </tr>
+            </table>
+            <p>
+                &nbsp;
+            </p>
+            <br />
+        </div>
+    </form>
+</body>
+</html>

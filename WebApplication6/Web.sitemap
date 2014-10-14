@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="iso-8859-1" ?>
+<siteMap>
+  <siteMapNode title="Home" url="/PublicPages/HomePage.aspx">
+    <siteMapNode title="Patient Registration" url="/Pages/PatientRegistration.aspx">
+    <siteMapNode title="Patients" url="/Pages/PatientGrid.aspx"/>
+    <siteMapNode title="Doctors" url="/Pages/Doctors.aspx"/>
+    <siteMapNode title="Beds" url="/Pages/BedGrid.aspx"/>
+    <siteMapNode title="Doctor's vists" url="/Pages/DoctorVisits.aspx"/>
+    <siteMapNode title="Visits" url="/Pages/Visits.aspx"/>
+  </siteMapNode> 
+      <siteMapNode title="Login" url="/PublicPages/Login.aspx"/>      
+  </siteMapNode>
+</siteMap>
